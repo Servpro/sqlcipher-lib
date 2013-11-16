@@ -261,7 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "CRYPTO_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libcrypto.a\" &&\nSQLCIPHER_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libsqlcipher.a\" &&\nSSL_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libssl.a\" &&\n\nDEVICE_CRYPTO_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libcrypto.a\" &&\nDEVICE_SQLCIPHER_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libsqlcipher.a\" &&\nDEVICE_SSL_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libssl.a\" &&\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\n\n\n# Create framework directory structure.\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${CRYPTO_LIB}\" \"${DEVICE_CRYPTO_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libcrypto.a\" &&\nlipo \"${SQLCIPHER_LIB}\" \"${DEVICE_SQLCIPHER_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libsqlcipher.a\" &&\nlipo \"${SSL_LIB}\" \"${DEVICE_SSL_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libssl.a\"";
+			shellScript = "CRYPTO_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libcrypto.a\" &&\nSQLCIPHER_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libsqlcipher.a\" &&\nSSL_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libssl.a\" &&\n\nDEVICE_CRYPTO_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libcrypto.a\" &&\nDEVICE_SQLCIPHER_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libsqlcipher.a\" &&\nDEVICE_SSL_LIB=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libssl.a\" &&\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\n\n\n# Create framework directory structure.\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${CRYPTO_LIB}\" \"${DEVICE_CRYPTO_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libcrypto.a\" &&\nlipo \"${SQLCIPHER_LIB}\" \"${DEVICE_SQLCIPHER_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libsqlcipher.a\" &&\nlipo \"${SSL_LIB}\" \"${DEVICE_SSL_LIB}\" -create -output \"${UNIVERSAL_LIBRARY_DIR}/libssl.a\"\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/include\" \"${UNIVERSAL_LIBRARY_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -438,6 +438,7 @@
 				52DFAE6B183683B800D0C9E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
